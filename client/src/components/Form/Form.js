@@ -64,14 +64,16 @@ const Form = ({currentId, setCurrentId}) => {
                     name="message" 
                     variant='outlined' 
                     label="Message" 
-                    fullWidth 
+                    fullWidth
+                    multiline 
+                    minRows={4} 
                     value={postData.message} 
                     onChange={(e) => setPostData({...postData, message:e.target.value})}>
                 </TextField>
                 <TextField 
                     name="tags" 
                     variant='outlined' 
-                    label="Tags" 
+                    label="Tags (coma separated)" 
                     fullWidth 
                     value={postData.tags} 
                     onChange={(e) => setPostData({...postData, tags:e.target.value.split(',')})}>
